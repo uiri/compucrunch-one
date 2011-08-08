@@ -78,7 +78,7 @@
 
 <!--<p><small><strong>XHTML:</strong> You can use these tags: <code><?php echo allowed_tags(); ?></code></small></p>-->
 
-<p><textarea name="comment" id="comment" rows="10" tabindex="4"></textarea></p>
+<p><textarea name="comment" id="comment" rows="15" cols="100%" tabindex="4"></textarea></p>
 
 <p><input name="submit" type="submit" id="submit" tabindex="5" value="Submit Comment" />
 <?php comment_id_fields(); ?>

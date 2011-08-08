@@ -30,13 +30,13 @@
                 <div id="branding">
                     <div id="blog-title">
                         <a href="<?php bloginfo('url')?>/" title="<?php bloginfo('name')?>" rel="home">
-                            <img src="http://img828.imageshack.us/img828/9214/compucrunch.png" alt="<?php bloginfo('name') ?>" />
+                            <img src="http://compucrunch.com/wp-content/uploads/2011/08/cclogo.png" alt="<?php bloginfo('name') ?>" />
                         </a>
                         <br/>
                         <div id="search">
-                            <form method="get" id="searchform" action="http://compucrunch.com/search.php" >
+                            <form method="get" id="searchform" action="http://compucrunch.com/" >
                                 <input id="s" type="text" name="s" value="" />
-                                <input id="searchsubmit" type="submit" value="Search" />
+                                <input id="searchsubmit" type="submit" value="Search Compucrunch" />
                             </form>
                         </div>
                     </div>
@@ -59,7 +59,11 @@
                         <script type="text/javascript" src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
                         </script>
                     </div>
-                    <?php wp_page_menu( 'sort_column=menu_order' ); ?>
+                    <div class="welcome">
+                        <div class="welcometext">
+                            <?php bloginfo('description'); ?>
+                        </div>
+                    </div>
 <!--                <div class="ad">
                         <script type="text/javascript"><!--
                             google_ad_client = "pub-0669517924713762";

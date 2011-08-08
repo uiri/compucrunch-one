@@ -28,6 +28,10 @@
                 </div>
             </div>
             <div class="clear"> </div>
+            <div class="navigation">
+                <span class="newpost"><?php next_post_link('%link', '&laquo; Next Post'); ?></span>
+                <span class="oldpost"><?php previous_post_link('%link', 'Previous Post &raquo;'); ?></span>
+            </div>
             <div class="allcomments"> 
                 <?php comments_template(); ?>
             </div>

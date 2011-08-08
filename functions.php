@@ -72,4 +72,56 @@ function custom_pings($comment, $args, $depth) {
     </div>
 <?php 
 }
+
+function change_wp_search_size($query) {
+	if ( $query->is_search ) // Make sure it is a search page
+		$query->query_vars['posts_per_page'] = 10; // Change 10 to the number of posts you would like to show
+ 
+	return $query; // Return our modified query variables
+}
+add_filter('pre_get_posts', 'change_wp_search_size'); // Hook our custom function onto the request filter
+
+function kriesi_pagination($pages = '', $range = 2)
+{  
+     $showitems = ($range * 2)+1;  
+
+     global $paged;
+     if(empty($paged)) $paged = 1;
+
+     if($pages == '')
+     {
+         global $wp_query;
+         $pages = $wp_query->max_num_pages;
+         if(!$pages)
+         {
+             $pages = 1;
+         }
+     }   
+
+     if(1 != $pages)
+     {
+         if ($paged == 1) {
+	     echo "<div class='pagination bumpleft'>";
+         } else if ($paged == $pages) {
+	     echo "<div class='pagination bumpright'>";
+         } else {
+	     echo "<div class='pagination bumpup'>";
+         }
+         if($paged > 2 && $paged > $range+1 && $showitems < $pages) echo "<a href='".get_pagenum_link(1)."'>1</a><span class="bluetext">&hellip;</span>";
+         /*if($paged > 1 && $showitems < $pages) echo "<a href='".get_pagenum_link($paged - 1)."'>&lsaquo;</a>";*/
+
+         for ($i=1; $i <= $pages; $i++)
+         {
+             if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems ))
+             {
+                 echo ($paged == $i)? "<span class='current'>".$i."</span>":"<a href='".get_pagenum_link($i)."' class='inactive' >".$i."</a>";
+             }
+         }
+
+         /*if ($paged < $pages && $showitems < $pages) echo "<a href='".get_pagenum_link($paged + 1)."'>&rsaquo;</a>";  */
+         if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) echo "<span class="bluetext>&hellip;</span><a href='".get_pagenum_link($pages)."'>$pages</a>";
+         echo "</div>\n";
+     }
+}
+
 ?>

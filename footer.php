@@ -19,6 +19,13 @@
                                 </ul>
                             </div>
                             <div class="clear"></div>
+                            <div class="surroundplayogg">
+                                <a href="http://playogg.org">
+                                    <div class="playogg">
+                                        <img title="I support PlayOgg!" src="http://compucrunch.com/wp-content/uploads/2011/08/play_ogg.png" alt="PlayOgg"/>
+                                    </div>
+                                </a>
+                            </div>
 			</div><!-- #site-info -->
 
 		</div><!-- #colophon -->
