@@ -82,8 +82,8 @@ function change_wp_search_size($query) {
 add_filter('pre_get_posts', 'change_wp_search_size'); // Hook our custom function onto the request filter
 
 function kriesi_pagination($pages = '', $range = 2)
-{  
-     $showitems = ($range * 2)+1;  
+{
+     $showitems = ($range * 2)+1;
 
      global $paged;
      if(empty($paged)) $paged = 1;
